@@ -84,24 +84,28 @@ export default {
   },
 
   computed: {
-    transactionsGrouped() { //ORDER RULE
+    transactionsGrouped() {
+      //ORDER RULE
       return groupBy(orderBy(this.transactions, "date", "desc"), "date");
     },
   },
 
   methods: {
-    formateDate(date) { //DATE FORMAT RULE
+    formateDate(date) {
+      //DATE FORMAT RULE
       return this.$dayjs(date).format("DD/MM/YYYY");
     },
-    afterAdd(transaction) { //PUSH DATA TO DB
+    afterAdd(transaction) {
+      //PUSH DATA TO DB
       this.transactions.push(transaction);
     },
-    onUpdate(transaction) { //UPDATE DATA ON DB AND AUTO INSERT DATA ON LIST
+    onUpdate(transaction) {
+      //UPDATE DATA ON DB AND AUTO INSERT DATA ON LIST
       const idx = this.transactions.findIndex((o) => o.id === transaction.id);
       this.transactions.splice(idx, 1, transaction);
-      // console.log(transaction);
     },
-    onFilter(filter) { //FILTER RULE
+    onFilter(filter) {
+      //FILTER RULE
       this.$store
         .dispatch("transactions/getTransactions", filter)
         .then((response) => {

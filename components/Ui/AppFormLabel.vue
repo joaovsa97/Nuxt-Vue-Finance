@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'AppFormLabel',
+  name: "AppFormLabel",
 };
 </script>
