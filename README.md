@@ -1,3 +1,6 @@
+# Project Detail
+This project was made for study pourposes in Vue.js using Nuxt and Tailwind CSS and Json-server for local data storage.
+
 # nuxt
 
 ## Build Setup
